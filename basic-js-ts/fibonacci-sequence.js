@@ -21,6 +21,14 @@ rl.on("close", function () {
 // phi = (1+√5) / 2
 // F(n) = round( Phi^n / √5 )
 function fib(num) {
+
+  if (num < 0) {
+    return 0;
+  }
+  if (num === 0 || num === 1) {
+    return 1;
+  }
+
   const sqrtFive = Math.sqrt(5);
   const phi = (1 + sqrtFive) / 2;
   return Math.round(Math.pow(phi, num) / sqrtFive);
